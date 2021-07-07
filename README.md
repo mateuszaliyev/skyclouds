@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Skyclouds</h1>
 
-## Getting Started
+Small [React.js](https://reactjs.org/) application build with [Next.js](https://nextjs.org/) framework and written in [TypeScript](https://www.typescriptlang.org/). Allows user to check current weather as well as weather forecasts for any of the observed cities.
 
-First, run the development server:
+### Installation
+
+Installing dependencies after cloning the repository is necessary for the application to run properly.
 
 ```bash
-npm run dev
+npm install
+
 # or
-yarn dev
+
+npm i
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Application requires a variable `OPEN_WEATHER_MAP_API_KEY` to be declared inside `.env.local` file inside of the root folder in order to get access to [OpenWeather](https://openweathermap.org/) API. Example of `.env.local` file content.
+> Note: File `.env.local` does not exist in the repository and must be created.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```
+OPEN_WEATHER_MAP_API_KEY=70f08cabc0a90f09c0d98f0a2092c0af
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Running application
 
-## Learn More
+Completion of the steps above should be enough to make the application work properly. It is possible to run the application in either development or production mode. Building the project is neccessary for production start-up to succeed.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run dev     # development
+npm run build   # build
+npm run start   # production
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Credentials
+After running the application and visiting the server url ([http://localhost:3000](http://localhost:3000) by default) the user will be greeted with a login form (if everything has been done correctly). The only credentials that will be accepted by the application can be found in the table below.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| Username | Password |
+| ---------|----------|
+| `admin`  | `admin`  |
