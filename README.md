@@ -1,3 +1,4 @@
+<p align="center"><img alt="Icon" height="128" src="https://github.com/mateuszaliyev/skyclouds/blob/main/public/logo.svg" width="128"></p>
 <h1 align="center">Skyclouds</h1>
 
 Small [React.js](https://reactjs.org/) application build with [Next.js](https://nextjs.org/) framework and written in [TypeScript](https://www.typescriptlang.org/). Allows user to check current weather as well as weather forecasts for any of the observed cities.
