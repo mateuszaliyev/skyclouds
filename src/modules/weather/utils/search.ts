@@ -1,5 +1,3 @@
-import cityList from "../../../../public/city.list.json";
-
 import { City } from "../types";
 
 /**
@@ -8,15 +6,20 @@ import { City } from "../types";
  * @returns Array of cities containing given string
  */
 const search = async (searchQuery: string) => {
-	return new Promise<City[]>((resolve, reject) => {
+	return new Promise<City[]>(async (resolve, reject) => {
 		try {
-			const cities = cityList as City[];
-			const query = searchQuery.toLowerCase();
-			const results = cities
-				.filter((city) => city.name.toLowerCase().includes(query))
-				.sort((a, b) => (a.name < b.name ? -1 : 1))
-				.slice(0, 200);
-			resolve(results);
+			const res = await fetch("/city.list.json", { method: "GET" });
+			if (res.ok) {
+				const cities = (await res.json()) as City[];
+				const query = searchQuery.toLowerCase();
+				const results = cities
+					.filter((city) => city.name.toLowerCase().includes(query))
+					.sort((a, b) => (a.name < b.name ? -1 : 1))
+					.slice(0, 200);
+				resolve(results);
+			} else {
+				reject([] as City[]);
+			}
 		} catch (err) {
 			console.error(err);
 			reject(err);
